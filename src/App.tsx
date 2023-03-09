@@ -1,5 +1,7 @@
+import ShortenerSection from "./components/ShortenerSection/ShortenerSection";
+
 const App = () => {
-  return <div>Hello world</div>;
+  return <ShortenerSection />;
 };
 
 export default App;
