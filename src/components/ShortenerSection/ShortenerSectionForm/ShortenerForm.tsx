@@ -28,7 +28,9 @@ const ShortenerForm = () => {
         />
         <button
           type="submit"
-          className="px-3 text-gray-50 font-bold bg-purple-600 rounded-r-xl drop-shadow-2xl transition-opacity duration-200 ease-in-out hover:opacity-75"
+          className="px-3 text-gray-50 font-bold bg-purple-600 rounded-r-xl drop-shadow-2xl transition-opacity 
+          duration-200 ease-in-out hover:opacity-75 disabled:opacity-50 disabled:pointer-events-none"
+          disabled={urlInputVal === "" ? true : false}
         >
           Shorten!
         </button>
