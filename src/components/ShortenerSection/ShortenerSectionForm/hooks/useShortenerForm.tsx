@@ -3,6 +3,7 @@ import { Url } from "../../../../models/Url";
 import { ApiResult } from "../../../../types/ApiResult";
 import apiAgent from "../../../../api/agent";
 import { getApiError } from "../../../../utils/errorExtractor";
+import { ensureHttpPrefix } from "../../../../utils/httpPrefix";
 
 export const useShortenerForm = () => {
   const [urlInputVal, setUrlInputVal] = useState("");
@@ -19,7 +20,7 @@ export const useShortenerForm = () => {
     setApiResult({ data: null, error: null });
     try {
       const result = await apiAgent.url.shortenUrl({
-        urlToShorten: urlInputVal,
+        urlToShorten: ensureHttpPrefix(urlInputVal),
       });
       setApiResult({ data: result, error: null });
       setUrlInputVal("");
