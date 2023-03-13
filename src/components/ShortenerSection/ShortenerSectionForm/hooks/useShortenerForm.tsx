@@ -22,6 +22,7 @@ export const useShortenerForm = () => {
         urlToShorten: urlInputVal,
       });
       setApiResult({ data: result, error: null });
+      setUrlInputVal("");
     } catch (error) {
       setApiResult({ data: null, error: getApiError(error) });
     }
