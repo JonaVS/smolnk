@@ -3,7 +3,7 @@ import ShortenerForm from "./ShortenerSectionForm/ShortenerForm";
 
 const ShortenerSection = () => {
   return (
-    <section className="flex flex-col place-content-center h-shortenerSectionH">
+    <section className="m-auto">
       <ShortenerSectionMsg />
       <ShortenerForm/>
     </section>

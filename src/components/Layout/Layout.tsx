@@ -11,7 +11,7 @@ const Layout = ({ children }: props) => {
     <>
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main>{children}</main>
+        <main className="flex flex-col grow">{children}</main>
         <Footer />
       </div>
     </>
