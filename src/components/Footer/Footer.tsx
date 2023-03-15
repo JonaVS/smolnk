@@ -8,7 +8,7 @@ const Footer = () => {
         rel="noopener noreferrer"
         className=" text-cyan-400"
       >
-        JonaVs
+        JonaVS
       </a>
     </footer>
   );
