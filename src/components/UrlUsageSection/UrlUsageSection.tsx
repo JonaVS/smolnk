@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LinkUsageForm from "./LinkUsageSectionForm/LinkUsageForm";
 
-const LinkUsageSection = () => {
+const UrlUsageSection = () => {
   return (
     <section className="m-auto w-full flex flex-col place-items-center">
       <Link to="/" className=" text-cyan-200 font-bold">
@@ -15,4 +15,4 @@ const LinkUsageSection = () => {
   );
 };
 
-export default LinkUsageSection;
+export default UrlUsageSection;
