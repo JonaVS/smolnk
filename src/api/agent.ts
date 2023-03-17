@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { ShortenerFormValues, Url } from "../models/Url";
+import { ShortenerFormValues, Url, UrlUsageCount } from "../models/Url";
 
 const response = <T>(response: AxiosResponse<T>) => response.data;
 axios.defaults.baseURL = import.meta.env.VITE_SHORTENER_API_BASE_URL;
@@ -22,6 +22,7 @@ if (import.meta.env.DEV) {
 
 const url = {
   shortenUrl: (body: ShortenerFormValues) => axios.post<Url>("/shortener", body).then(response),
+  getUrlUsageCount: (shortUrl: string) => axios.get<UrlUsageCount>(`/usageCount/${shortUrl}`).then(response),
 };
 
 const apiAgent = {
