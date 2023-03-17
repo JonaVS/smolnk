@@ -1,6 +1,6 @@
 import TextInput from "../../shared/TextInput/TextInput";
 
-const LinkUsageForm = () => {
+const UrlUsageForm = () => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
@@ -24,4 +24,4 @@ const LinkUsageForm = () => {
   );
 };
 
-export default LinkUsageForm;
+export default UrlUsageForm;

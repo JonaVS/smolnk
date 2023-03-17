@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LinkUsageForm from "./LinkUsageSectionForm/LinkUsageForm";
+import UrlUsageForm from "./UrlUsageSectionForm/UrlUsageForm";
 
 const UrlUsageSection = () => {
   return (
@@ -10,7 +10,7 @@ const UrlUsageSection = () => {
       <p className="text-center mb-5 px-2 text-gray-50 text-xs sm:text-sm font-bold">
         Enter link below to see usage count <span className="text-xl">🙂</span>
       </p>
-      <LinkUsageForm />
+      <UrlUsageForm />
     </section>
   );
 };
