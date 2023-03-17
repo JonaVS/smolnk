@@ -5,3 +5,9 @@ export type Url = {
 export type ShortenerFormValues = {
   urlToShorten: string;
 };
+
+export type UrlUsageCount = Url & {
+  usageCount: number;
+};
+
+export type UrlUsageFormValues = Url;
