@@ -10,18 +10,18 @@ const ShortenerSectionMsg = () => {
         <span className={keywordClassName}>Size</span> doesn't matter – unless
       </p>
       <p className={lineClassName}>
-        we're talking about <span className={keywordClassName}>Links</span>{" "}
+        we're talking about <span className={keywordClassName}>URLs</span>{" "}
       </p>
       <p className="text-center mt-2 px-2 text-gray-50 text-xs sm:text-sm font-bold">
-        Beautiful links with just one click. Shorten your link below
+        Small URLs with just one click. Shorten your URL below
         <span className="text-xl"> 😉</span>
       </p>
       <p className="mx-auto text-center text-gray-50 text-xs sm:text-sm font-bold">
-        Or click{" "}
+        Already have one? Click{" "}
         <Link to="/link-usage">
           <span className="text-teal-200 font-bold">here</span>
         </Link>{" "}
-        to see link usage count <span className="text-xl">👀</span>
+        to see URL usage count <span className="text-xl">👀</span>
       </p>
     </>
   );
