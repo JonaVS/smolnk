@@ -18,7 +18,7 @@ const ShortenerSectionMsg = () => {
       </p>
       <p className="mx-auto text-center text-gray-50 text-xs sm:text-sm font-bold">
         Already have one? Click{" "}
-        <Link to="/link-usage">
+        <Link to="/url-usage">
           <span className="text-teal-200 font-bold">here</span>
         </Link>{" "}
         to see URL usage count <span className="text-xl">👀</span>

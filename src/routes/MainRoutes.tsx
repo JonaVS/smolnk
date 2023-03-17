@@ -8,7 +8,7 @@ const MainRoutes = () => {
     <Routes>
       <Route element={<Layout/>} >
         <Route path="/" element={<ShortenerSection />} />
-        <Route path="/link-usage" element={<UrlUsageSection/>} />
+        <Route path="/url-usage" element={<UrlUsageSection/>} />
         <Route path="/*" element={<div className="m-auto font-extrabold text-xl text-white">404 page will go here!</div>} />
       </Route>
     </Routes>
