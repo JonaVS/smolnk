@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import UrlShortener from "../pages/UrlShortener";
 import UrlUsageCount from "../pages/UrlUsageCount";
+import PageNotFound from "../pages/PageNotFound";
 
 const MainRoutes = () => {
   return (
@@ -9,7 +10,7 @@ const MainRoutes = () => {
       <Route element={<Layout/>} >
         <Route path="/" element={<UrlShortener/>} />
         <Route path="/url-usage" element={<UrlUsageCount/>} />
-        <Route path="/*" element={<div className="m-auto font-extrabold text-xl text-white">404 page will go here!</div>} />
+        <Route path="/*" element={<PageNotFound/>} />
       </Route>
     </Routes>
   );
