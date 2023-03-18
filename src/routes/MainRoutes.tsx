@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
-import UrlUsageSection from "../components/UrlUsageSection/UrlUsageSection";
-import ShortenerSection from "../components/ShortenerSection/ShortenerSection";
+import UrlShortener from "../pages/UrlShortener";
+import UrlUsageCount from "../pages/UrlUsageCount";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route element={<Layout/>} >
-        <Route path="/" element={<ShortenerSection />} />
-        <Route path="/url-usage" element={<UrlUsageSection/>} />
+        <Route path="/" element={<UrlShortener/>} />
+        <Route path="/url-usage" element={<UrlUsageCount/>} />
         <Route path="/*" element={<div className="m-auto font-extrabold text-xl text-white">404 page will go here!</div>} />
       </Route>
     </Routes>
