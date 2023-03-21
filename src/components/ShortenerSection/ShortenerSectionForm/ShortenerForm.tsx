@@ -30,7 +30,6 @@ const ShortenerForm = () => {
           label="URL to shorten"
           name="urlToShorten"
           labelClassName="hidden"
-          className="max-w-xl w-10/12 h-14 px-3 bg-gray-50 text-gray-500 font-medium rounded-l-xl drop-shadow-lg focus:outline-none"
           placeholder="Enter a long URL here..."
           onChange={handleChange}
           value={values.urlToShorten}
