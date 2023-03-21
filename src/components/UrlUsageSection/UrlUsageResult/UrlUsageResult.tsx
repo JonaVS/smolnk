@@ -9,11 +9,11 @@ type props = {
 
 const UrlUsageResult = ({ isLoading, result }: props) => {
   return (
-    <div className="h-20 mt-6">
+    <div className="h-20 mt-6 text-center">
       {isLoading ? (
         <LoadingSpinner />
       ) : result.data && result.data.usageCount !== null ? (
-        <div className="w-44 rounded-xl p-2 text-gray-50 font-bold text-center shadow-md">
+        <div className="w-44 mx-auto rounded-xl p-2 text-gray-50 font-bold text-center shadow-md">
           <p>Usage count</p>
           <span className="font-extrabold text-xl m-auto block">
             {result.data.usageCount.toLocaleString()}
