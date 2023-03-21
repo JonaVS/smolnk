@@ -10,7 +10,7 @@ const NotFoundSection = () => {
       <p>Sorry, the page you're looking doesn't exist.</p>
       <Link
         to="/"
-        className="block mt-4 p-2 bg-purple-600 rounded-full shadow-lg transition-opacity 
+        className="block mx-auto w-11/12 sm:w-72 mt-4 p-2 bg-purple-600 rounded-full shadow-lg transition-opacity 
           duration-200 ease-in-out hover:opacity-80"
       >
         Go to Home
