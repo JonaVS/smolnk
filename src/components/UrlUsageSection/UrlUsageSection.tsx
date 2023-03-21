@@ -1,17 +1,18 @@
+import MainSectionWrapper from "../shared/MainSectionWrapper/MainSectionWrapper";
 import { Link } from "react-router-dom";
 import UrlUsageForm from "./UrlUsageSectionForm/UrlUsageForm";
 
 const UrlUsageSection = () => {
   return (
-    <section className="m-auto w-full flex flex-col place-items-center">
-      <Link to="/" className=" text-cyan-200 font-bold">
+    <MainSectionWrapper>
+      <Link to="/" className=" text-cyan-200 font-bold block text-center">
         Go to Home
       </Link>
       <p className="text-center mb-5 px-2 text-gray-50 text-xs sm:text-sm font-bold">
         Enter URL below to see usage count <span className="text-xl">🙂</span>
       </p>
       <UrlUsageForm />
-    </section>
+    </MainSectionWrapper>
   );
 };
 
