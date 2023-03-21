@@ -3,6 +3,7 @@ import { ShortenerFormValues, Url } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
 import TextInput from "../../shared/TextInput/TextInput";
+import Button from "../../shared/Button/Button";
 import ShortenerResult from "../ShortenerResult/ShortenerResult";
 
 const initialValues = {
@@ -34,14 +35,13 @@ const ShortenerForm = () => {
           onChange={handleChange}
           value={values.urlToShorten}
         />
-        <button
+        <Button
           type="submit"
-          className="px-3 text-gray-50 font-bold bg-purple-600 rounded-r-xl drop-shadow-2xl transition-opacity 
-          duration-200 ease-in-out hover:opacity-75 disabled:opacity-50 disabled:pointer-events-none"
+          variant="formPrimary"
           disabled={(values.urlToShorten === "" || isSubmitting) ? true : false}
         >
           Shorten!
-        </button>
+        </Button>
       </form>
       <ShortenerResult isLoading={isSubmitting} result={apiResult}/>
     </>
