@@ -3,6 +3,7 @@ import { UrlUsageCount, UrlUsageFormValues } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
 import TextInput from "../../shared/TextInput/TextInput";
+import Button from "../../shared/Button/Button";
 import UrlUsageResult from "../UrlUsageResult/UrlUsageResult";
 
 const initialValues = {
@@ -31,14 +32,13 @@ const UrlUsageForm = () => {
           placeholder="Ex: https://smolnk.com/wn9H0C"
           onChange={handleChange}
         />
-        <button
+        <Button
           type="submit"
-          className="px-3 text-gray-50 font-bold bg-purple-600 rounded-r-xl drop-shadow-2xl transition-opacity 
-          duration-200 ease-in-out hover:opacity-75 disabled:opacity-50 disabled:pointer-events-none"
+          variant="formPrimary"
           disabled={(values.shortUrl === "" || isSubmitting) ? true : false}
         >
           Submit
-        </button>
+        </Button>
       </form>
       <UrlUsageResult isLoading={isSubmitting} result={apiResult}/>
     </>
