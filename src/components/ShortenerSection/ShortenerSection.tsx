@@ -1,12 +1,13 @@
+import MainSectionWrapper from "../shared/MainSectionWrapper/MainSectionWrapper";
 import ShortenerSectionMsg from "./ShortenerSectionMsg/ShortenerSectionMsg";
 import ShortenerForm from "./ShortenerSectionForm/ShortenerForm";
 
 const ShortenerSection = () => {
   return (
-    <section className="m-auto">
+    <MainSectionWrapper>
       <ShortenerSectionMsg />
-      <ShortenerForm/>
-    </section>
+      <ShortenerForm />
+    </MainSectionWrapper>
   );
 };
 
