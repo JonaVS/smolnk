@@ -28,7 +28,6 @@ const UrlUsageForm = () => {
           value={values.shortUrl}
           name="shortUrl"
           labelClassName="hidden"
-          className="max-w-xl w-10/12 h-14 px-3 bg-gray-50 text-gray-500 font-medium rounded-l-xl drop-shadow-lg focus:outline-none"
           placeholder="Ex: https://smolnk.com/wn9H0C"
           onChange={handleChange}
         />
