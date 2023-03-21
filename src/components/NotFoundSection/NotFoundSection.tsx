@@ -1,8 +1,9 @@
+import MainSectionWrapper from "../shared/MainSectionWrapper/MainSectionWrapper";
 import { Link } from "react-router-dom";
 
 const NotFoundSection = () => {
   return (
-    <section className="m-auto text-center text-gray-200 font-bold">
+    <MainSectionWrapper className="text-center text-gray-200 font-bold">
       <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-200">
         404
       </h1>
@@ -14,7 +15,7 @@ const NotFoundSection = () => {
       >
         Go to Home
       </Link>
-    </section>
+    </MainSectionWrapper>
   );
 };
 
