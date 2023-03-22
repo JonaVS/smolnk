@@ -3,6 +3,7 @@ import { UrlUsageCount, UrlUsageFormValues } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
 import { shouldShowResultStatus } from "../../../utils/showResultStatus";
+import { motion } from "framer-motion";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
 import UrlUsageResult from "../UrlUsageResult/UrlUsageResult";
@@ -25,7 +26,7 @@ const UrlUsageForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex px-3 w-full justify-center">
+      <motion.form onSubmit={handleSubmit} className="flex px-3 w-full justify-center" layout>
         <TextInput
           id="shortUrlInput"
           label="Short URL to search"
@@ -42,7 +43,7 @@ const UrlUsageForm = () => {
         >
           Submit
         </Button>
-      </form>
+      </motion.form>
       {showResultStatus && <UrlUsageResult isLoading={isSubmitting} result={apiResult}/>}
     </>
   );
