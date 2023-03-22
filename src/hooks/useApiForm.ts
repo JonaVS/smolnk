@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ApiResult } from "../types/ApiResult";
+import { Result } from "../types/Result";
 import { getApiError } from "../utils/errorExtractor";
 
 type UseApiFormParam<T, Q> = {
@@ -10,7 +10,7 @@ type UseApiFormParam<T, Q> = {
 
 export const useApiForm = <T extends {}, Q>({ initialValues, onSubmit, cleanOnSuccess = true }: UseApiFormParam<T, Q>) => {
   const [values, setValues] = useState<T>(initialValues);
-  const [apiResult, setApiResult] = useState<ApiResult<Q>>({data: null, error: null});
+  const [apiResult, setApiResult] = useState<Result<Q>>({data: null, error: null});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

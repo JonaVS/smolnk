@@ -1,10 +1,10 @@
 import { UrlUsageCount } from "../../../models/Url";
-import { ApiResult } from "../../../types/ApiResult";
+import { Result } from "../../../types/Result";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 
 type props = {
   isLoading: boolean,
-  result: ApiResult<UrlUsageCount>
+  result: Result<UrlUsageCount>
 }
 
 const UrlUsageResult = ({ isLoading, result }: props) => {
