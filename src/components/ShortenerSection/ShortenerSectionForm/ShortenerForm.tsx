@@ -3,6 +3,7 @@ import { ShortenerFormValues, Url } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
 import { shouldShowResultStatus } from "../../../utils/showResultStatus";
+import { motion } from "framer-motion";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
 import ShortenerResult from "../ShortenerResult/ShortenerResult";
@@ -25,9 +26,10 @@ const ShortenerForm = () => {
 
   return (
     <>
-      <form
+      <motion.form
         onSubmit={handleSubmit}
         className="flex justify-center px-3 mt-8"
+        layout
       >
         <TextInput
           id="urlInput"
@@ -45,7 +47,7 @@ const ShortenerForm = () => {
         >
           Shorten!
         </Button>
-      </form>
+      </motion.form>
       {showResultStatus && <ShortenerResult isLoading={isSubmitting} result={apiResult}/>}
     </>
   );
