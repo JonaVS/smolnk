@@ -2,6 +2,7 @@ import { useApiForm } from "../../../hooks/useApiForm";
 import { UrlUsageCount, UrlUsageFormValues } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
+import { shouldShowResultStatus } from "../../../utils/showResultStatus";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
 import UrlUsageResult from "../UrlUsageResult/UrlUsageResult";
@@ -19,6 +20,8 @@ const UrlUsageForm = () => {
         return await apiAgent.url.getUrlUsageCount(ensureHttpPrefix(values.shortUrl));
       },
     }); 
+    
+  const showResultStatus = shouldShowResultStatus(apiResult, isSubmitting);
 
   return (
     <>
@@ -40,7 +43,7 @@ const UrlUsageForm = () => {
           Submit
         </Button>
       </form>
-      <UrlUsageResult isLoading={isSubmitting} result={apiResult}/>
+      {showResultStatus && <UrlUsageResult isLoading={isSubmitting} result={apiResult}/>}
     </>
   );
 };
