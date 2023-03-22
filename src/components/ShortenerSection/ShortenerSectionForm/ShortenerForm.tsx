@@ -2,6 +2,7 @@ import { useApiForm } from "../../../hooks/useApiForm";
 import { ShortenerFormValues, Url } from "../../../models/Url";
 import apiAgent from "../../../api/agent";
 import { ensureHttpPrefix } from "../../../utils/httpPrefix";
+import { shouldShowResultStatus } from "../../../utils/showResultStatus";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
 import ShortenerResult from "../ShortenerResult/ShortenerResult";
@@ -19,6 +20,8 @@ const ShortenerForm = () => {
         return await apiAgent.url.shortenUrl({urlToShorten: ensureHttpPrefix(values.urlToShorten)})
       },
     }); 
+
+  const showResultStatus = shouldShowResultStatus(apiResult, isSubmitting);
 
   return (
     <>
@@ -43,7 +46,7 @@ const ShortenerForm = () => {
           Shorten!
         </Button>
       </form>
-      <ShortenerResult isLoading={isSubmitting} result={apiResult}/>
+      {showResultStatus && <ShortenerResult isLoading={isSubmitting} result={apiResult}/>}
     </>
   );
 };
