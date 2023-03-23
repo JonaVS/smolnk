@@ -1,9 +1,26 @@
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 import { IoMdCopy } from "react-icons/io";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
 type props = { shortUrl: string };
 const btnClassName = "rounded-full p-2 bg-teal-100 drop-shadow-lg transition-color hover:bg-purple-200 duration-300 ease-in-out"
+
+const actionsContainer: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.3
+    }
+  },
+}
+
+const actionItem: Variants = {
+  hidden: { opacity: 0, scale: 1.2 },
+  show: { opacity: 1, scale: 1, transition: {duration: 0.2}}
+}
 
 const ShortenerResultActions = ({ shortUrl }: props) => {
  const [copied, setCopied] = useState(false);
@@ -21,12 +38,18 @@ const ShortenerResultActions = ({ shortUrl }: props) => {
   };
 
   return (
-    <div className="flex gap-2 justify-center mt-2">
-      <button
+    <motion.div
+      className="flex gap-2 justify-center mt-2"
+      variants={actionsContainer}
+      initial="hidden"
+      animate="show"
+    >
+      <motion.button
+        className={`relative ${btnClassName}`}
         title="Copy to clipboard"
         type="button"
         onClick={handleCopyToClipboard}
-        className={`relative ${btnClassName}`}
+        variants={actionItem}
       >
         <IoMdCopy size={25} color="gray" />
         {copied && (
@@ -34,16 +57,17 @@ const ShortenerResultActions = ({ shortUrl }: props) => {
             Copied!
           </span>
         )}
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        className={btnClassName}
         title="Open in new window"
         type="button"
         onClick={handleOpenInNewWindow}
-        className={btnClassName}
+        variants={actionItem}
       >
         <RxOpenInNewWindow size={25} color="gray" />
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 };
 
