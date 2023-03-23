@@ -2,12 +2,12 @@ import { UrlUsageCount } from "../../../models/Url";
 import { Result } from "../../../types/Result";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 
-type props = {
+type Props = {
   isLoading: boolean,
   result: Result<UrlUsageCount>
 }
 
-const UrlUsageResult = ({ isLoading, result }: props) => {
+const UrlUsageResult = ({ isLoading, result }: Props) => {
   return (
     <div className="h-20 mt-6 text-center">
       {isLoading ? (
