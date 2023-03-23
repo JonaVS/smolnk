@@ -4,7 +4,7 @@ import { Result } from "../../../types/Result";
 import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
 import ShortenerResultActions from "./ShortenerResultActions/ShortenerResultActions";
 
-type props = {
+type Props = {
   isLoading: boolean;
   result: Result<Url | null>;
 };
@@ -19,7 +19,7 @@ const resultText: Variants = {
   show: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
 }
 
-const ShortenerResult = ({ isLoading, result }: props) => {
+const ShortenerResult = ({ isLoading, result }: Props) => {
   return (
     <motion.div
       className="mt-6 h-20 w-max mx-auto text-white font-bold"
