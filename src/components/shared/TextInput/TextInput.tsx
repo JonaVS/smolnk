@@ -1,11 +1,11 @@
 import React from "react";
 
-type props = React.ComponentPropsWithRef<"input"> & {
+type Props = React.ComponentPropsWithRef<"input"> & {
   label: string;
   labelClassName?: string
 };
 
-const TextInput = ({ label, labelClassName, id, ...props }: props) => {
+const TextInput = ({ label, labelClassName, id, ...props }: Props) => {
   return (
     <>
       <label htmlFor={id} className={labelClassName}>{label}</label>
