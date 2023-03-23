@@ -4,11 +4,11 @@ import { BsGithub } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <nav className="h-auto w-full">
-      <ul className="sm:w-4/5 m-auto list-none flex justify-between items-center py-6 px-4">
+    <nav className="h-16 flex items-center w-full fixed backdrop-blur-sm">
+      <ul className="w-11/12 md:w-4/5 m-auto list-none flex justify-between items-center">
         <li>
           <Link to="/">
-            <img src={appLogo} className="h-7" alt="App logo" />
+            <img src={appLogo} className="h-6" alt="App logo" />
           </Link>
         </li>
         <li>
