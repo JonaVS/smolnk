@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { IoMdCopy } from "react-icons/io";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
-type props = { shortUrl: string };
+type Props = { shortUrl: string };
 const btnClassName = "rounded-full p-2 bg-teal-100 drop-shadow-lg transition-color hover:bg-purple-200 duration-300 ease-in-out"
 
 const actionsContainer: Variants = {
@@ -22,7 +22,7 @@ const actionItem: Variants = {
   show: { opacity: 1, scale: 1, transition: {duration: 0.2}}
 }
 
-const ShortenerResultActions = ({ shortUrl }: props) => {
+const ShortenerResultActions = ({ shortUrl }: Props) => {
  const [copied, setCopied] = useState(false);
 
   const handleCopyToClipboard = (): void => {
