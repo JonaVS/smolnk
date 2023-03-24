@@ -26,7 +26,7 @@ const UrlUsageForm = () => {
 
   return (
     <>
-      <motion.form onSubmit={handleSubmit} className="flex px-3 w-full justify-center" layout>
+      <motion.form onSubmit={handleSubmit} className="flex justify-center px-3 mt-3" layout>
         <TextInput
           id="shortUrlInput"
           label="Short URL to search"
