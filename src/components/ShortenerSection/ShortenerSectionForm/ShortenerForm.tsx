@@ -18,7 +18,7 @@ const ShortenerForm = () => {
       initialValues,
       cleanOnSuccess: false,
       onSubmit: async (values): Promise<Url> => {
-        return await apiAgent.url.shortenUrl({urlToShorten: ensureHttpPrefix(values.urlToShorten)})
+        return await apiAgent.url.shortenUrl({urlToShorten: ensureHttpPrefix(values.urlToShorten.trim())})
       },
     }); 
 
