@@ -18,7 +18,7 @@ const UrlUsageForm = () => {
       initialValues,
       cleanOnSuccess: false,
       onSubmit: async (values): Promise<UrlUsageCount> => {
-        return await apiAgent.url.getUrlUsageCount(ensureHttpPrefix(values.shortUrl));
+        return await apiAgent.url.getUrlUsageCount(ensureHttpPrefix(values.shortUrl.trim()));
       },
     }); 
     
