@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { IoMdCopy } from "react-icons/io";
+import ActionToast from "../../../shared/ActionToast/ActionToast";
 import { RxOpenInNewWindow } from "react-icons/rx";
 
 type Props = { shortUrl: string };
@@ -44,20 +45,18 @@ const ShortenerResultActions = ({ shortUrl }: Props) => {
       initial="hidden"
       animate="show"
     >
-      <motion.button
-        className={`relative ${btnClassName}`}
-        title="Copy to clipboard"
-        type="button"
-        onClick={handleCopyToClipboard}
-        variants={actionItem}
-      >
-        <IoMdCopy size={25} color="gray" />
-        {copied && (
-          <span className="absolute bottom-[-25px] right-1/2 translate-x-2/4 font-bold text-sm">
-            Copied!
-          </span>
-        )}
-      </motion.button>
+      <div className="relative">
+        <motion.button
+          className={`${btnClassName}`}
+          title="Copy to clipboard"
+          type="button"
+          onClick={handleCopyToClipboard}
+          variants={actionItem}
+        >
+          <IoMdCopy size={25} color="gray" />
+        </motion.button>
+        <ActionToast show={copied} text="Copied!" />
+      </div>
       <motion.button
         className={btnClassName}
         title="Open in new window"
