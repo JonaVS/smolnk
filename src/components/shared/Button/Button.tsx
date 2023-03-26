@@ -8,11 +8,11 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?:  keyof typeof ButtonVariant
 };
 
-const Button = ({variant = "default", ...props}:Props) => {
+const Button = ({variant = "default", className="", ...props}:Props) => {
   return (
     <button
     {...props}
-      className={`${ButtonVariant[variant]} ${props.className}`}
+      className={`${ButtonVariant[variant]}${className && ` ${className}`}`}
     >
       {props.children}
     </button>
