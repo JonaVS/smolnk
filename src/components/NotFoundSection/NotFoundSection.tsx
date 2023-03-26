@@ -1,14 +1,27 @@
+import { Transition, Variants } from "framer-motion";
 import MainSectionWrapper from "../shared/MainSectionWrapper/MainSectionWrapper";
 import { Link } from "react-router-dom";
+
+const transition: Transition = {
+  duration: 0.5,
+  layout: {type: "tween", duration: 0.3}
+}
+
+const section: Variants = {
+  hidden: { x: -100, opacity: 0},
+  show: { opacity: 1, x: 0 },
+  exit: { x: -100, opacity: 0 }
+};
 
 const NotFoundSection = () => {
   return (
     <MainSectionWrapper
       className="text-center text-gray-200 font-bold"
-      transition={{ duration: 0.5, type: "tween" }}
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ x: 100, opacity: 0 }}
+      variants={section}
+      transition={transition}
+      initial="hidden"
+      animate="show"
+      exit="exit"
     >
       <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-200">
         404
