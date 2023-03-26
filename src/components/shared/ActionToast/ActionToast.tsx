@@ -16,8 +16,8 @@ const toastContainer: Variants = {
 const ActionToast = ({
   show,
   text,
-  wrapperClassName,
-  textClassName,
+  wrapperClassName="",
+  textClassName="",
 }: Props) => {
   return (
     <AnimatePresence>
@@ -27,9 +27,10 @@ const ActionToast = ({
           initial="hidden"
           animate="show"
           exit="exit"
-          className={`absolute bottom-[-30px] bg-purple-600 rounded-md flex items-center p-1 ${wrapperClassName || ""}`}
+          className={`absolute bottom-[-30px] bg-purple-600 rounded-md 
+          flex items-center p-1${wrapperClassName && ` ${wrapperClassName}`}`}
         >
-          <span className={`font-bold text-xs ${textClassName || ""}`}>{text}</span>
+          <span className={`font-bold text-xs${textClassName && ` ${textClassName}`}`}>{text}</span>
         </motion.div>
       )}
     </AnimatePresence>
