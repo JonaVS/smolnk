@@ -6,6 +6,7 @@ import { shouldShowResultStatus } from "../../../utils/showResultStatus";
 import { motion } from "framer-motion";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
+import { isEmptyString } from "../../../utils/emptyString";
 import ShortenerResult from "../ShortenerResult/ShortenerResult";
 
 const initialValues = {
@@ -43,7 +44,7 @@ const ShortenerForm = () => {
         <Button
           type="submit"
           variant="formPrimary"
-          disabled={(values.urlToShorten === "" || isSubmitting) ? true : false}
+          disabled={(isEmptyString(values.urlToShorten) || isSubmitting) ? true : false}
         >
           Shorten!
         </Button>
