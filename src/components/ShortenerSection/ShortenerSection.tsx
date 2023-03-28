@@ -18,6 +18,7 @@ const ShortenerSection = () => {
   return (
     <LayoutGroup>
       <MainSectionWrapper
+        className="md:w-full"
         variants={section}
         transition={transition}
         initial="hidden"
