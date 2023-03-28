@@ -6,6 +6,7 @@ import { shouldShowResultStatus } from "../../../utils/showResultStatus";
 import { motion } from "framer-motion";
 import TextInput from "../../shared/TextInput/TextInput";
 import Button from "../../shared/Button/Button";
+import { isEmptyString } from "../../../utils/emptyString";
 import UrlUsageResult from "../UrlUsageResult/UrlUsageResult";
 
 const initialValues = {
@@ -39,7 +40,7 @@ const UrlUsageForm = () => {
         <Button
           type="submit"
           variant="formPrimary"
-          disabled={(values.shortUrl === "" || isSubmitting) ? true : false}
+          disabled={(isEmptyString(values.shortUrl) || isSubmitting) ? true : false}
         >
           Submit
         </Button>
