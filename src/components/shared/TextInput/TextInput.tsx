@@ -12,7 +12,7 @@ const TextInput = ({ label, labelClassName, id, ...props }: Props) => {
       <input
         id={id}
         type="text"
-        className="max-w-sm md:max-w-lg w-full h-14 px-3 bg-gray-50 text-gray-500 font-medium rounded-l-xl drop-shadow-lg focus:outline-none"
+        className="max-w-sm md:max-w-lg w-full h-14 px-3 bg-gray-50 text-gray-500 font-medium rounded-l-xl rounded-r-none drop-shadow-lg focus:outline-none"
         {...props}
       />
     </>
