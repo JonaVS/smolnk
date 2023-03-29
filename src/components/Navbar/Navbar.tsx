@@ -13,7 +13,7 @@ const Navbar = () => {
         </li>
         <li>
           <a
-            href="https://github.com/JonaVS"
+            href="https://github.com/JonaVS/smolnk"
             target="_blank"
             rel="noopener noreferrer"
           >
