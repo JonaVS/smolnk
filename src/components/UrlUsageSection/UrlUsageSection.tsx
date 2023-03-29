@@ -30,7 +30,7 @@ const UrlUsageSection = () => {
           Go to Home
         </Link>
         <p className="px-2 text-gray-50 text-xs sm:text-sm font-bold">
-          Enter URL below to see usage count <span className="text-xl">🙂</span>
+          Enter URL below to see usage count <span className="text-sm md:text-xl">🙂</span>
         </p>
         <UrlUsageForm />
       </MainSectionWrapper>
