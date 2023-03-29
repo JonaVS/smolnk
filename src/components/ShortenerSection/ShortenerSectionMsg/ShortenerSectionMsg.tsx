@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const lineClassName = "mx-auto text-center h-max w-full text-white text-2xl md:text-5xl lg:text-6xl font-bold";
+const lineClassName = "mx-auto text-center h-max w-full text-gray-200 text-2xl md:text-5xl lg:text-6xl font-bold";
 const keywordClassName = "font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-200";
-const extraLineClassName = "text-center text-gray-50 text-xs sm:text-sm font-bold" 
+const extraLineClassName = "text-center text-gray-200 text-xs sm:text-sm font-bold" 
 const emojiClassName = "text-sm md:text-xl"
 
 const ShortenerSectionMsg = () => {
