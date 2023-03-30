@@ -6,7 +6,7 @@ const Footer = () => {
         href="https://github.com/JonaVS"
         target="_blank"
         rel="noopener noreferrer"
-        className=" text-cyan-400"
+        className="text-teal-200"
       >
         JonaVS
       </a>
