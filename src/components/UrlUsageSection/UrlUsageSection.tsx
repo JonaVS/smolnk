@@ -1,4 +1,4 @@
-import { LayoutGroup, Transition, Variants } from "framer-motion";
+import { LayoutGroup, Transition, Variants, motion } from "framer-motion";
 import MainSectionWrapper from "../shared/MainSectionWrapper/MainSectionWrapper";
 import { Link } from "react-router-dom";
 import UrlUsageForm from "./UrlUsageSectionForm/UrlUsageForm";
@@ -14,6 +14,10 @@ const section: Variants = {
   exit: { x: 100, opacity: 0 }
 };
 
+const linkSpan: Variants = {
+  hover: {scale: 0.8, transition: {duration: 0.3}}
+}
+
 const UrlUsageSection = () => {
   return (
     <LayoutGroup>
@@ -26,11 +30,18 @@ const UrlUsageSection = () => {
         layout="position"
         className="text-center"
       >
-        <Link to="/" className="text-cyan-200 font-bold">
-          Go to Home
+        <Link to="/">
+          <motion.span
+            variants={linkSpan}
+            whileHover="hover"
+            className="text-teal-200 font-bold inline-block"
+          >
+            Go to Home
+          </motion.span>
         </Link>
         <p className="px-2 text-gray-200 text-xs sm:text-sm font-bold">
-          Enter URL below to see usage count <span className="text-sm md:text-xl">🙂</span>
+          Enter URL below to see usage count{" "}
+          <span className="text-sm md:text-xl">🙂</span>
         </p>
         <UrlUsageForm />
       </MainSectionWrapper>
