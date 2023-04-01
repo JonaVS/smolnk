@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { motion, Variants } from "framer-motion";
+
+const linkSpan: Variants = {
+  hover: {scale: 0.8, transition: {duration: 0.3}}
+}
 
 const lineClassName = "mx-auto text-center h-max w-full text-gray-200 text-2xl md:text-5xl lg:text-6xl font-bold";
 const keywordClassName = "font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-200";
@@ -21,7 +26,13 @@ const ShortenerSectionMsg = () => {
       <p className={extraLineClassName}>
         Already have one? Click{" "}
         <Link to="/url-usage">
-          <span className="text-teal-200 font-bold">here</span>
+          <motion.span
+            variants={linkSpan}
+            whileHover="hover"
+            className="text-teal-200 font-bold inline-block"
+          >
+            here
+          </motion.span>
         </Link>{" "}
         to see URL usage count <span className={emojiClassName}>👀</span>
       </p>
